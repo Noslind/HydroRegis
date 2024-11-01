@@ -1,0 +1,8 @@
+.contentImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contentImg img {
+    height: 500px;
+}

@@ -1,0 +1,33 @@
+{% extends 'HydroRegis/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/pagina.css' %}">
+<div style="background-color: rgb(25, 110, 138); color: antiquewhite; padding: 10px;" class="encabezado">
+    <h1>
+        {% if request.user.is_authenticated %}
+            {{ user.username | upper}}, bienvenido
+        {% else %}
+            Registrate :D
+        {% endif %}</h1>
+</div>
+<hr>
+<div style="margin-left: 5%; margin-right: 5%;" class="margen">
+    <div class="contentPrimary">
+        <h1>hola esta es la pagina de inicio aqui ira informacion sobre nuestro proyecto y como ayudaria al dia a dia de las personas.</h1>
+    </div>
+    <div  class="contentImg">
+        <img src="{% static 'img/personas_tristes.png' %}" alt="Personas tristes sin aguas">
+        <img src="{% static 'img/hombre_feliz.png' %}" alt="hombre feliz con agua">
+    </div>
+    <div>
+        <h2>¿Qué es HydroRegis?</h2>
+        <p>HydroRegis es una plataforma web que ayuda a la gestión de redes de agua potable y sanitaria, permitiendo la visualización, seguimiento y control de los niveles de agua en tiempo real.</p>
+        <h2>¿Cómo funciona?</h2>
+        <p>HydroRegis utiliza la tecnología de IoT (Internet of Things) para conectar redes de agua potable y sanitaria, permitiendo la visualización, seguimiento y control de los niveles de agua en tiempo real.</p>
+        <h2>¿Cómo puedo ayudar?</h2>
+        <p>Puedes ayudar a la gestión de redes de agua potable y sanitaria con HydroRegis, enviando report
+    </div>
+</div>
+        
+{% endblock %}

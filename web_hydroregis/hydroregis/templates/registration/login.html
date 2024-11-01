@@ -1,0 +1,26 @@
+{% extends 'HydroRegis/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/access.css' %}">
+<div class="accessContend">
+    <div class="container">
+        <div class="form-container">
+            <form action="" method="post">
+                {% csrf_token %}
+                <img style="margin-bottom: 15px;" src="{% static 'img/logo_nombre.png' %}" alt="Logo con nombre" height="200px">
+                <br>
+                <input type="text" name="username" id="" placeholder="Nombre de usuario">
+                <br>
+                <input type="password" name="password" id="" placeholder="contraseña">
+                <button class="botonCeleste" type="submit">Iniciar sesión</button>
+            </form>
+            <div>
+                <!-- pagina de registro -->
+                <p><a href="">¿No tienes cuenta?</a></p>
+                <!-- Enviar correo para poder establecer otra contraseña. -->
+                <p><a href="">¿No te acuerdas tu contraseña? </a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
