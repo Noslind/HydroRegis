@@ -7,19 +7,50 @@
     <title>{% block title %}HydroRegis{% endblock %}</title>
     <link rel="shortcut icon" href="{% static 'img/logo_comprimida.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
 
     <nav class="navbar top-nav">
         <ul class="nav-links">
-            <li><a href="{% url 'home' %}">Inicio</a></li>
-            <li><a href="{% url 'activities' %}">Actividades</a></li>
-            <li><a href="{% url 'deposits' %}">Depositos</a></li>
+            <li>
+                <a href="{% url 'home' %}">
+                    <i class='bx bxs-home' style='color:#ffffff' ></i>
+                    <br>
+                    Inicio
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'activities' %}">
+                    <i class='bx bxs-calendar-check'></i>
+                    <br>
+                    Actividades
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'deposits' %}">
+                    <i class='bx bxs-cylinder' style='color:#ffffff'  ></i>
+                    <br>
+                    Depositos
+                </a>
+            </li>
 
             {% if request.user.is_authenticated %}
-                <li><a href="{% url 'exit' %}">Cerrar sesion</a></li>
+                <li>
+                    <a href="{% url 'exit' %}">
+                        <i class='bx bxs-exit' style='color:#ffffff' ></i>
+                        <br>
+                        Cerrar sesion
+                    </a>
+                </li>
             {% else %}
-                <li><a href="{% url 'login' %}">Iniciar sesion</a></li>
+                <li>
+                    <a href="{% url 'login' %}">
+                        <i class='bx bxs-user'></i>
+                        <br>
+                        Iniciar sesion
+                    </a>
+                </li>
             {% endif %}
 
         </ul>

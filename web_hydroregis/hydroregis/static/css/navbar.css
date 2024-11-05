@@ -4,7 +4,7 @@ body {
 }
 
 .navbar {
-    background-color: #333;
+    background-color: #049eae;
     overflow: hidden;
 }
 
@@ -22,13 +22,16 @@ body {
 .nav-links a {
     display: block;
     text-align: center;
-    padding: 14px 16px;
+    padding: 10px 16px 16px 16px;
     text-decoration: none;
     color: white;
 }
+a i{
+    font-size: 30px;
+}
 
 .nav-links a:hover {
-    background-color: #575757; /* Color de fondo al pasar el mouse */
+    background-color: #028391; /* Color de fondo al pasar el mouse */
 }
 
 .container {

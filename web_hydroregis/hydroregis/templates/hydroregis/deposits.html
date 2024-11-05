@@ -1,16 +1,50 @@
 {% extends 'HydroRegis/base.html' %}
+{% load static %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'css/pagina.css' %}">
+<div class="encabezado">
+    <h1>Depositos</h1>
+</div>
+<div class="margen">
+    <div class="grid-container">
+        {% for deposit in deposit_data %}
+        <div class="grid-item">
+            <div class="deposito">
+                <div class="deposito_inside">
+                    <div class="water-level" id="water-level" style="height: {{ deposit.percentage }}%;"></div>
+                </div>
+            </div>
+            <div>
+                <h1 id="nameDeposit">{{ deposit.name }}</h1>
+                <p id="porcentaje-text">porcentaje: {{ deposit.percentage }}%</p>
+                <p id="litros-text">litros: {{ deposit.liters }}L</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
-<h3>Depositos</h3>
-        <ul>
-            <li>Desposito</li>
-            <li>Desposito</li>
-            <li>Desposito</li>
-            <li>Desposito</li>
-            <li>Desposito</li>
-            <li>Desposito</li>
-            <li>Desposito</li>
-            <li>Desposito</li>
-        </ul>
+<!-- Agregar el JavaScript aquí -->
+<script>
+    // Función para actualizar el nivel de agua dinámicamente
+    function setWaterLevel(Nombre, percentage, liters) {
+        // Elementos de la interfaz
+        const name = document.getElementById('nameDeposit');
+        const waterLevel = document.getElementById('water-level');
+        const porcentajeText = document.getElementById('porcentaje-text');
+        const litrosText = document.getElementById('litros-text');
+        
+        // Cambiar el tamaño del nivel de agua según el porcentaje
+        waterLevel.style.height = `${percentage}%`;
+        
+        // Actualizar el texto del porcentaje y litros
+        name.textContent = `${Nombre}`;
+        porcentajeText.textContent = `porcentaje: ${percentage}%`;
+        litrosText.textContent = `litros: ${liters}L`;
+    }
+    
+    // Ejemplo de actualización
+    setWaterLevel('Telo',85, 1000);
+</script>
 {% endblock %}
