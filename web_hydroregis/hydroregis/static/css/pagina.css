@@ -1,3 +1,9 @@
+.encabezado{
+    background-color: #fdf7eb;    
+    padding: 10px 10px 10px 2%;
+    font-size: 20px;
+}
+
 
 .contentImg {
     display: flex;
@@ -66,4 +72,19 @@
     transition: height 1s ease;
 }
 
-
+.button_celeste{
+    border-style: none;
+    border-radius: 5px;
+    border: solid 1px #4e616c;
+    background-color: #08a7b9;
+    padding: 1%;
+    color: #f3e6d4;
+    font-size: medium;
+}
+.contenedorPrimary {
+    margin: 10px;
+    padding: 20px;
+    background-color: #f3e6d4;
+    border-radius: 10px;
+    border: solid 1px #ccc;
+}
